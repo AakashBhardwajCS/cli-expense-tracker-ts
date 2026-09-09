@@ -1,0 +1,12 @@
+{
+  "totalIncome": 77300,
+  "totalExpenses": 0,
+  "balance": 77300,
+  "byCategory": {
+    "transport": 450,
+    "shopping": 1200,
+    "other": 75000,
+    "food": 650
+  }, 
+  "transactions": 4
+}
