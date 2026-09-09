@@ -1,0 +1,21 @@
+{
+  "name": "cli-expense-tracker",
+  "version": "1.0.0",
+  "description": "An expense tracker app",
+  "homepage": "https://github.com/AakashBhardwajCS/cli-expense-tracker#readme",
+  "bugs": {
+    "url": "https://github.com/AakashBhardwajCS/cli-expense-tracker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AakashBhardwajCS/cli-expense-tracker.git"
+  },
+  "license": "ISC",
+  "author": "Aakash Bhardwaj",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  }
+}
