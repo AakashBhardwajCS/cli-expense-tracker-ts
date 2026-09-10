@@ -1,10 +1,18 @@
-export function generateReport(totalIncome, transactions) {
+import type {
+  NormalizedTransaction,
+  Report
+} from "./types";
+
+export function generateReport(
+  totalIncome: number,
+  transactions: NormalizedTransaction[]
+): Report {
   let totalExpenses = 0;
 
-  const byCategory = {};
+  const byCategory: Record<string, number> = {};
 
   for (const transaction of transactions) {
-    const amount = Number(transaction.amount);
+    const amount = transaction.amount;
 
     if (amount > 0) {
       totalIncome += amount;
@@ -17,8 +25,6 @@ export function generateReport(totalIncome, transactions) {
     byCategory[category] =
       (byCategory[category] || 0) + Math.abs(amount);
   }
-
-  console.log(totalIncome, totalExpenses);
 
   return {
     totalIncome,
