@@ -3,10 +3,11 @@ import { parseCSV } from "./parser.js";
 import { validateTransaction } from "./validator.js";
 import { categorize } from "./categorizer.js";
 import { generateReport } from "./reporter.js";
+import dotenv from "dotenv"
+dotenv.config()
 
 const inputFile = process.argv[2] || "input.csv";
 const outputFile = process.argv[3] || "report.json";
-
 const csv = fs.readFileSync(inputFile, "utf8");
 const rawTransactions = parseCSV(csv);
 
@@ -26,8 +27,9 @@ for (const [index, transaction] of rawTransactions.entries()) {
     category: categorize(transaction.description)
   });
 }
-
-const report = generateReport(transactions);
+let totalIncome = Number(process.env.TOTAL_INCOME) || 0;
+console.log(`Total Income: ${totalIncome}`);
+const report = generateReport(totalIncome, transactions);
 
 fs.writeFileSync(
   outputFile,

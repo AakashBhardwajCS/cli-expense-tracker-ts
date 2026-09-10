@@ -1,5 +1,4 @@
-export function generateReport(transactions) {
-  let totalIncome = 0;
+export function generateReport(totalIncome, transactions) {
   let totalExpenses = 0;
 
   const byCategory = {};
@@ -18,6 +17,8 @@ export function generateReport(transactions) {
     byCategory[category] =
       (byCategory[category] || 0) + Math.abs(amount);
   }
+
+  console.log(totalIncome, totalExpenses);
 
   return {
     totalIncome,
